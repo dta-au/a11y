@@ -1,0 +1,99 @@
+# _config.yml
+theme: just-the-docs/just-the-docs
+title: An Alpha PoC on A11y
+description: This is a demo github Pages site to showcase how we could use GitHub publishing workflow
+
+# Enable search
+search_enabled: true
+
+# Enable dark mode
+color_scheme: dark
+
+# .github/workflows/github-pages.yml
+name: Build and deploy Jekyll site to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  github-pages:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/cache@v2
+        with:
+          path: vendor/bundle
+          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile') }}
+          restore-keys: |
+            ${{ runner.os }}-gems-
+      - uses: helaili/jekyll-action@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+# Gemfile
+source "https://rubygems.org"
+
+gem "jekyll", "~> 4.2.0"
+gem "just-the-docs"
+
+group :jekyll_plugins do
+  gem "jekyll-feed", "~> 0.12"
+  gem "jekyll-seo-tag"
+end
+
+# Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
+# and associated library.
+platforms :mingw, :x64_mingw, :mswin, :jruby do
+  gem "tzinfo", "~> 1.2"
+  gem "tzinfo-data"
+end
+
+# Performance-booster for watching directories on Windows
+gem "wdm", "~> 0.1.1", :platforms => [:mingw, :x64_mingw, :mswin]
+
+
+# Navigation structure
+nav:
+  - title: Home
+    url: /
+  - title: About
+    url: /about
+  - title: Blog
+    url: /blog
+
+# Footer content
+footer_content: "Copyright © 2024 - DTA"
+
+# Exclude files from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+
+# Front matter defaults
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+# Collections
+collections:
+  docs:
+    output: true
+
+# Plugins
+plugins:
+  - jekyll-seo-tag
