@@ -1,0 +1,11 @@
+# Eleventy output directory
+_site/
+
+# Node modules
+node_modules/
+
+# Mac files
+.DS_Store
+
+# Debug logs
+npm-debug.log*

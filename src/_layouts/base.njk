@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }}</title>
+    <title>{% raw %}{{ title }}{% endraw %}</title>
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
@@ -15,10 +15,10 @@
         </nav>
     </header>
     <main>
-        {{ content | safe }}
+        {% raw %}{{ content | safe }}{% endraw %}
     </main>
     <footer>
-        <p>&copy; {{ "now" | date("%Y") }} Your Name</p>
+        <p>&copy; {% raw %}{{ "now" | date("%Y") }}{% endraw %} Your Name</p>
     </footer>
 </body>
 </html>
