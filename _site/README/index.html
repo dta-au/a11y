@@ -1,0 +1,134 @@
+<h1>GitHub Pages Jekyll Site with GitHub Actions</h1>
+<p>This repository contains a template for creating a GitHub Pages site using Jekyll and GitHub Actions. It uses the Just the Docs theme and includes a basic structure for a documentation site with a blog.</p>
+<h2>Setup Instructions</h2>
+<ol>
+<li>
+<p><strong>Create a new repository</strong></p>
+<ul>
+<li>Go to GitHub and create a new repository.</li>
+<li>You can name it anything you like, but <code>&lt;username&gt;.github.io</code> will create a user or organization site.</li>
+</ul>
+</li>
+<li>
+<p><strong>Clone the repository</strong></p>
+<pre><code class="language-bash">git clone https://github.com/&lt;username&gt;/&lt;repository-name&gt;.git
+cd &lt;repository-name&gt;
+</code></pre>
+</li>
+<li>
+<p><strong>Add template files</strong></p>
+<ul>
+<li>Copy the following files into your repository:
+<ul>
+<li><code>_config.yml</code></li>
+<li><code>index.md</code></li>
+<li><code>about.md</code></li>
+<li><code>blog.md</code></li>
+<li><code>.github/workflows/github-pages.yml</code></li>
+<li><code>Gemfile</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Create necessary directories</strong></p>
+<pre><code class="language-bash">mkdir _posts _docs
+</code></pre>
+</li>
+<li>
+<p><strong>Configure GitHub Pages</strong></p>
+<ul>
+<li>Go to your repository on GitHub</li>
+<li>Navigate to Settings &gt; Pages</li>
+<li>For &quot;Source&quot;, select &quot;GitHub Actions&quot;</li>
+</ul>
+</li>
+<li>
+<p><strong>Create gh-pages branch</strong></p>
+<pre><code class="language-bash">git checkout -b gh-pages
+git push origin gh-pages
+</code></pre>
+</li>
+<li>
+<p><strong>Commit and push your changes</strong></p>
+<pre><code class="language-bash">git add .
+git commit -m &quot;Initial commit with Jekyll structure and GitHub Actions&quot;
+git push origin main
+</code></pre>
+</li>
+<li>
+<p><strong>Wait for GitHub Actions to build and deploy</strong></p>
+<ul>
+<li>Go to the &quot;Actions&quot; tab in your repository to monitor the progress</li>
+<li>Once complete, your site will be live at <code>https://&lt;username&gt;.github.io/&lt;repository-name&gt;</code></li>
+</ul>
+</li>
+</ol>
+<h2>Customization</h2>
+<ol>
+<li>
+<p><strong>Theme customization</strong></p>
+<ul>
+<li>Create a <code>_sass</code> directory for custom SCSS files</li>
+<li>Override theme variables or add your own styles</li>
+</ul>
+</li>
+<li>
+<p><strong>Navigation</strong></p>
+<ul>
+<li>Modify the <code>nav</code> section in <code>_config.yml</code> to update the site navigation</li>
+</ul>
+</li>
+<li>
+<p><strong>Content</strong></p>
+<ul>
+<li>Add new markdown files to the root directory or <code>_docs</code> for new pages</li>
+<li>Add new blog posts as markdown files in the <code>_posts</code> directory, named <code>YYYY-MM-DD-title.md</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Front Matter</strong></p>
+<ul>
+<li>Use front matter in your markdown files to control page-specific settings</li>
+<li>Example:<pre><code class="language-yaml">---
+layout: page
+title: My New Page
+nav_order: 4
+---
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Custom Plugins</strong></p>
+<ul>
+<li>Add desired Jekyll plugins to your <code>Gemfile</code></li>
+<li>Update <code>_config.yml</code> to include new plugins</li>
+</ul>
+</li>
+</ol>
+<h2>File Structure</h2>
+<pre><code>.
+├── _config.yml
+├── _posts/
+│   └── YYYY-MM-DD-example-post.md
+├── _docs/
+│   └── example-doc.md
+├── .github/
+│   └── workflows/
+│       └── github-pages.yml
+├── Gemfile
+├── index.md
+├── about.md
+└── blog.md
+</code></pre>
+<h2>Additional Resources</h2>
+<ul>
+<li><a href="https://jekyllrb.com/docs/">Jekyll Documentation</a></li>
+<li><a href="https://just-the-docs.github.io/just-the-docs/">Just the Docs Theme</a></li>
+<li><a href="https://docs.github.com/en/actions">GitHub Actions Documentation</a></li>
+<li><a href="https://docs.github.com/en/pages">GitHub Pages Documentation</a></li>
+</ul>
+<h2>Support</h2>
+<p>If you encounter any issues or have questions, please open an issue in this repository.</p>
+<p>Happy coding!</p>

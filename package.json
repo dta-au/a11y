@@ -1,0 +1,23 @@
+{
+  "name": "a11y",
+  "version": "1.0.0",
+  "description": "This repository contains a template for creating a GitHub Pages site using Jekyll and GitHub Actions. It uses the Just the Docs theme and includes a basic structure for a documentation site with a blog.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dta-au/a11y.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dta-au/a11y/issues"
+  },
+  "homepage": "https://github.com/dta-au/a11y#readme",
+  "dependencies": {
+    "@11ty/eleventy": "^2.0.1"
+  }
+}
